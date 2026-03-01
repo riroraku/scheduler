@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo "$(date): Logged!" >> logs.txt
+#echo -ne "\a" 
