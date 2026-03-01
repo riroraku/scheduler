@@ -21,6 +21,8 @@ To run program you can either run it on background with (&)
 or foreground
 		(e.g.) ./scheduler 60 log_users
 
+Note! [script_file]'s both err and out stream are redirected to /dev/null by default!
+
 COMPILATION
 Just compile it normally!
 		gcc scheduler.c -o scheduler

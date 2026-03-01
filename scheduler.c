@@ -7,15 +7,17 @@ static void validate_n_parse_args(const char**, unsigned short*);
 
 int main(int args, char** argv) {
 	unsigned short s = 0;
-	char* cmd;
-	size_t cmd_len;
+	//char* cmd;
+	//              source ... &> /dev/null
+	size_t cmd_len = 22;
 
 	if(args == 3) {
 		validate_n_parse_args((const char**)argv, &s);
-		cmd_len = 10 + strlen(argv[2]);
-		if((cmd = malloc(cmd_len)) == NULL) perror("Unable to allocate memory!");
-		memset(cmd, 0, cmd_len); // to make buf has null byte for string
-		snprintf(cmd, cmd_len, "%s%s", "source ", argv[2]);
+		cmd_len += strlen(argv[2]);
+		//if((cmd = malloc(cmd_len)) == NULL) perror("Unable to allocate memory!");
+		//memset(cmd, 0, cmd_len); // to make buf has null byte for string
+		char cmd[cmd_len];
+		snprintf(cmd, cmd_len, "%s %s %s", "source", argv[2], "&> /dev/null");
 		while(1) {
 			system(cmd);
 			system("echo -n \a"); // beeps per defined minute(s) (SEE README.txt for explanation!)
