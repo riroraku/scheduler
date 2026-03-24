@@ -14,12 +14,10 @@ This program consists of (2) args:
 		[minute]       Run script file  for every 1 - 1440 minutes.
 		[script_file]  A script file to run.
 
-To run program you can either run it on background with (&)
-		(e.g.) ./scheduler 60 log_users &
-or foreground
+To run program,
 		(e.g.) ./scheduler 60 log_users
 
-(Note: All fd (except stdou) are redirected to /dev/null)
+(Note: All fd (except stdout) are redirected to /dev/null)
 
 COMPILATION
 Just compile it normally! Copy and paste then:
