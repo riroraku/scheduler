@@ -61,11 +61,6 @@ Target: aarch64-unknown-linux-android24
 Thread model: posix
 InstalledDir: /data/data/com.termux/files/usr/bin
 
-Q&A
-Q. Why using system() for beep character?
-A. I tried using printf() for that character it seems doesnt
-work so no choice i used system() calling echo -ne "\a".
-
 NOT RELATED
 I program this one on phone with nano! Though theres a decent
 on mobile phones but it seem i really gotten hang-up on nano
