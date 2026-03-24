@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/data/data/com.termux/files/usr/bin/bash
 
-echo "$(date): Logged!" >> logs.txt
-#echo -ne "\a" 
+echo "$(date): $(pwd): Logged!" >> logs.txt
+#echo -en "\a"
+#touch file_test
