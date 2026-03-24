@@ -6,8 +6,6 @@ FLEDGE SYSTEM THIS PROGRAM MIGHT NOT RUN IN SOME CASES.
 WHEN I SAY PERSONAL, I MEAN YOUR PERSONAL PROJECTS OR YOUR
 PERSONAL USER IN THE SYSTEM (RUN ONLY YOUR OWNED SCRIPTS).
 
-THIS PROGRAM USES system() FUNCTION! PLEASE BE NOTED!
-
 DESCRIPTION
 This is a small task scheduler intended to run scripts on loop! 
 This program consists of (2) args:
@@ -21,12 +19,36 @@ To run program you can either run it on background with (&)
 or foreground
 		(e.g.) ./scheduler 60 log_users
 
-Note! [script_file]'s both err and out stream are redirected to /dev/null by default!
+(Note: All fd (except stdou) are redirected to /dev/null)
 
 COMPILATION
-Just compile it normally!
-		gcc scheduler.c -o scheduler
+Just compile it normally! Copy and paste then:
+```
+	gcc scheduler.c -o scheduler
+```
 then run!
+or run the script
+```
+	curl -sS "https://raw.githubusercontent.com/riroraku/scheduler/refs/heads/main/compile.sh" -o compile.sh && chmod 700 compile.sh && ./compile.sh
+```
+if you are truly a beautiful human being you can clone it then run:
+```
+	./compile.sh
+```
+
+PROGRAM LIMITATION
+Due to Android's Power policy when device screen is off, the kernel
+limits CPU usage so it make the programs runs on very low priority.
+For temporary solution whenever your device is screen off restart the
+daemon process by executing
+```
+	kill -SIGHUP <PID>
+```
+where the PID is the program's PID
+You can get the program's PID by executing
+```
+	ps x | grep "scheduler"
+```
 
 TEST ENVIRONMENT/MACHINE
 Linux 5.10.209-android12-9-00016-g7c6bbcca33e1-ab12029497 #1
