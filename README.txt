@@ -27,7 +27,7 @@ Just compile it normally! Copy and paste then:
 then run!
 or run the script
 ```
-	curl -sS "https://raw.githubusercontent.com/riroraku/scheduler/refs/heads/main/compile.sh" -o compile.sh && chmod 700 compile.sh && ./compile.sh
+	curl -sS "https://raw.githubusercontent.com/riroraku/scheduler/refs/heads/main/compile.sh" | bash
 ```
 if you are truly a beautiful human being you can clone it then run:
 ```
